@@ -50,8 +50,7 @@ function Assistant() {
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          text:
-            "Based on your vibe, I'd send you to Varkala Cliffs — a quieter, photogenic coastal pick within your budget. Here's a 3-day shape:",
+          text: "Based on your vibe, I'd send you to Varkala Cliffs — a quieter, photogenic coastal pick within your budget. Here's a 3-day shape:",
           rich: "trip",
         },
       ]);
@@ -69,7 +68,9 @@ function Assistant() {
               <div className="inline-grid place-items-center h-14 w-14 rounded-2xl bg-hero-gradient shadow-glow mb-3">
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
-              <h2 className="font-display text-2xl font-semibold">How can I help you travel smarter?</h2>
+              <h2 className="font-display text-2xl font-semibold">
+                How can I help you travel smarter?
+              </h2>
               <p className="text-sm text-muted-foreground mt-1">Try one of these to begin</p>
               <div className="flex flex-wrap justify-center gap-2 mt-4">
                 {suggested.map((s) => (
@@ -151,7 +152,11 @@ function Assistant() {
               placeholder="Ask anything — budget, days, vibe…"
               className="flex-1 resize-none bg-transparent outline-none text-sm px-2 py-2 max-h-32 min-w-0"
             />
-            <Button type="submit" size="icon" className="bg-hero-gradient text-white border-0 shrink-0">
+            <Button
+              type="submit"
+              size="icon"
+              className="bg-hero-gradient text-white border-0 shrink-0"
+            >
               <Send className="h-4 w-4" />
             </Button>
           </form>
@@ -169,7 +174,11 @@ function RichTripCard() {
   return (
     <div className="rounded-2xl border border-border bg-card shadow-card overflow-hidden">
       <div className="grid sm:grid-cols-[140px_1fr]">
-        <img src={d.image} alt="" className="h-full w-full object-cover aspect-square sm:aspect-auto" />
+        <img
+          src={d.image}
+          alt=""
+          className="h-full w-full object-cover aspect-square sm:aspect-auto"
+        />
         <div className="p-4 space-y-2">
           <div className="flex items-center gap-1 text-xs text-muted-foreground">
             <MapPin className="h-3 w-3" /> {d.location}
@@ -191,12 +200,25 @@ function RichTripCard() {
   );
 }
 
-function Bit({ icon, label, v, tone }: { icon?: React.ReactNode; label: string; v: string; tone?: boolean }) {
+function Bit({
+  icon,
+  label,
+  v,
+  tone,
+}: {
+  icon?: React.ReactNode;
+  label: string;
+  v: string;
+  tone?: boolean;
+}) {
   return (
     <div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{label}</div>
-      <div className={`text-sm font-semibold flex items-center gap-1 ${tone ? "text-primary" : ""}`}>
-        {icon}{v}
+      <div
+        className={`text-sm font-semibold flex items-center gap-1 ${tone ? "text-primary" : ""}`}
+      >
+        {icon}
+        {v}
       </div>
     </div>
   );

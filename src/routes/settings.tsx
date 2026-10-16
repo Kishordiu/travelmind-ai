@@ -16,7 +16,16 @@ export const Route = createFileRoute("/settings")({
   component: Settings,
 });
 
-const categories = ["Beach", "Mountain", "City", "Heritage", "Nature", "Food", "Adventure", "Wellness"];
+const categories = [
+  "Beach",
+  "Mountain",
+  "City",
+  "Heritage",
+  "Nature",
+  "Food",
+  "Adventure",
+  "Wellness",
+];
 
 function Settings() {
   const { theme, setTheme } = useTheme();
@@ -40,16 +49,16 @@ function Settings() {
         <Section title="Traveler preferences" icon={<Heart className="h-4 w-4 text-accent" />}>
           <div className="space-y-5">
             <div>
-              <Label className="text-xs uppercase tracking-wider text-muted-foreground">Favorite categories</Label>
+              <Label className="text-xs uppercase tracking-wider text-muted-foreground">
+                Favorite categories
+              </Label>
               <div className="flex flex-wrap gap-2 mt-2">
                 {categories.map((c) => {
                   const on = picks.includes(c);
                   return (
                     <button
                       key={c}
-                      onClick={() =>
-                        setPicks((p) => (on ? p.filter((x) => x !== c) : [...p, c]))
-                      }
+                      onClick={() => setPicks((p) => (on ? p.filter((x) => x !== c) : [...p, c]))}
                       className={`text-xs px-3 py-1.5 rounded-full border transition ${
                         on
                           ? "bg-hero-gradient text-white border-transparent shadow-glow"
@@ -68,7 +77,9 @@ function Settings() {
                   <button
                     key={s}
                     className={`rounded-xl border p-3 text-sm transition ${
-                      i === 1 ? "border-primary/50 bg-primary/5 text-foreground" : "border-border hover:border-foreground/30"
+                      i === 1
+                        ? "border-primary/50 bg-primary/5 text-foreground"
+                        : "border-border hover:border-foreground/30"
                     }`}
                   >
                     {s}
@@ -82,18 +93,23 @@ function Settings() {
         <Section title="Budget range" icon={<Wallet className="h-4 w-4 text-primary" />}>
           <div className="flex items-center justify-between text-sm mb-3">
             <span className="text-muted-foreground">Per trip target</span>
-            <span className="font-display text-2xl font-semibold">₹{budget[0].toLocaleString()}</span>
+            <span className="font-display text-2xl font-semibold">
+              ₹{budget[0].toLocaleString()}
+            </span>
           </div>
           <Slider value={budget} onValueChange={setBudget} max={150000} step={2500} min={5000} />
           <div className="flex justify-between text-xs text-muted-foreground mt-2">
-            <span>₹5k</span><span>₹1.5L</span>
+            <span>₹5k</span>
+            <span>₹1.5L</span>
           </div>
         </Section>
 
         <Section title="Appearance & language" icon={<Globe className="h-4 w-4 text-primary" />}>
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <Label className="text-xs uppercase tracking-wider text-muted-foreground">Theme</Label>
+              <Label className="text-xs uppercase tracking-wider text-muted-foreground">
+                Theme
+              </Label>
               <div className="grid grid-cols-2 gap-2 mt-2">
                 <button
                   onClick={() => setTheme("light")}
@@ -138,7 +154,10 @@ function Settings() {
         </Section>
 
         <div className="flex justify-between items-center pt-2">
-          <Button variant="outline" className="text-destructive border-destructive/40 hover:bg-destructive/10">
+          <Button
+            variant="outline"
+            className="text-destructive border-destructive/40 hover:bg-destructive/10"
+          >
             <LogOut className="mr-2 h-4 w-4" /> Sign out
           </Button>
           <Button
@@ -153,7 +172,15 @@ function Settings() {
   );
 }
 
-function Section({ title, icon, children }: { title: string; icon?: React.ReactNode; children: React.ReactNode }) {
+function Section({
+  title,
+  icon,
+  children,
+}: {
+  title: string;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <section className="rounded-2xl border border-border bg-card p-6 shadow-card">
       <div className="flex items-center gap-2 mb-4">
@@ -175,8 +202,16 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 }
 
 function Toggle({
-  icon, title, hint, defaultChecked,
-}: { icon: React.ReactNode; title: string; hint: string; defaultChecked?: boolean }) {
+  icon,
+  title,
+  hint,
+  defaultChecked,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  hint: string;
+  defaultChecked?: boolean;
+}) {
   return (
     <div className="flex items-center gap-3 rounded-xl border border-border p-4">
       <div className="h-9 w-9 rounded-lg bg-muted grid place-items-center text-primary">{icon}</div>

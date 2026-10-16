@@ -1,7 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
-  Compass, Sparkles, Wallet, ShieldCheck, Gem, Plane, ArrowRight, TrendingUp, MapPin,
+  Compass,
+  Sparkles,
+  Wallet,
+  ShieldCheck,
+  Gem,
+  Plane,
+  ArrowRight,
+  TrendingUp,
+  MapPin,
 } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { StatCard } from "@/components/stat-card";
@@ -11,7 +19,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import {
-  ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, PieChart, Pie, Cell,
+  ResponsiveContainer,
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  Tooltip,
+  PieChart,
+  Pie,
+  Cell,
 } from "recharts";
 
 export const Route = createFileRoute("/dashboard")({
@@ -24,7 +40,13 @@ export const Route = createFileRoute("/dashboard")({
   component: Dashboard,
 });
 
-const COLORS = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)", "var(--chart-5)"];
+const COLORS = [
+  "var(--chart-1)",
+  "var(--chart-2)",
+  "var(--chart-3)",
+  "var(--chart-4)",
+  "var(--chart-5)",
+];
 
 function Dashboard() {
   return (
@@ -46,7 +68,8 @@ function Dashboard() {
                 Your travel score is <span className="opacity-90">87</span> this month.
               </h1>
               <p className="mt-2 opacity-80 max-w-xl">
-                Based on your preferences, 6 new destinations match your vibe — including 2 hidden gems near you.
+                Based on your preferences, 6 new destinations match your vibe — including 2 hidden
+                gems near you.
               </p>
               <div className="mt-5 flex flex-wrap gap-2">
                 <Link to="/assistant">
@@ -55,7 +78,10 @@ function Dashboard() {
                   </Button>
                 </Link>
                 <Link to="/explore">
-                  <Button variant="outline" className="h-10 bg-transparent text-white border-white/30 hover:bg-white/10">
+                  <Button
+                    variant="outline"
+                    className="h-10 bg-transparent text-white border-white/30 hover:bg-white/10"
+                  >
                     Explore <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
                 </Link>
@@ -67,7 +93,10 @@ function Dashboard() {
                 { l: "Saved", v: "34" },
                 { l: "Countries", v: "8" },
               ].map((x) => (
-                <div key={x.l} className="px-4 py-3 rounded-xl bg-white/10 backdrop-blur min-w-[88px]">
+                <div
+                  key={x.l}
+                  className="px-4 py-3 rounded-xl bg-white/10 backdrop-blur min-w-[88px]"
+                >
                   <div className="font-display text-2xl font-semibold">{x.v}</div>
                   <div className="text-xs opacity-80">{x.l}</div>
                 </div>
@@ -81,7 +110,11 @@ function Dashboard() {
           <StatCard
             label="Estimated budget"
             value="₹42.8k"
-            hint={<><span className="text-success">▼ 8%</span> vs last month</>}
+            hint={
+              <>
+                <span className="text-success">▼ 8%</span> vs last month
+              </>
+            }
             icon={<Wallet className="h-4 w-4 text-primary" />}
             delay={0}
           />
@@ -127,8 +160,19 @@ function Dashboard() {
                       <stop offset="100%" stopColor="var(--chart-1)" stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="month" stroke="var(--muted-foreground)" fontSize={11} tickLine={false} axisLine={false}/>
-                  <YAxis stroke="var(--muted-foreground)" fontSize={11} tickLine={false} axisLine={false}/>
+                  <XAxis
+                    dataKey="month"
+                    stroke="var(--muted-foreground)"
+                    fontSize={11}
+                    tickLine={false}
+                    axisLine={false}
+                  />
+                  <YAxis
+                    stroke="var(--muted-foreground)"
+                    fontSize={11}
+                    tickLine={false}
+                    axisLine={false}
+                  />
                   <Tooltip
                     contentStyle={{
                       background: "var(--popover)",
@@ -137,7 +181,13 @@ function Dashboard() {
                       fontSize: 12,
                     }}
                   />
-                  <Area type="monotone" dataKey="domestic" stroke="var(--chart-1)" strokeWidth={2} fill="url(#g1)" />
+                  <Area
+                    type="monotone"
+                    dataKey="domestic"
+                    stroke="var(--chart-1)"
+                    strokeWidth={2}
+                    fill="url(#g1)"
+                  />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -149,8 +199,16 @@ function Dashboard() {
             <div className="h-44 mt-2">
               <ResponsiveContainer>
                 <PieChart>
-                  <Pie data={segmentation} dataKey="value" innerRadius={42} outerRadius={70} paddingAngle={3}>
-                    {segmentation.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
+                  <Pie
+                    data={segmentation}
+                    dataKey="value"
+                    innerRadius={42}
+                    outerRadius={70}
+                    paddingAngle={3}
+                  >
+                    {segmentation.map((_, i) => (
+                      <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                    ))}
                   </Pie>
                   <Tooltip
                     contentStyle={{
@@ -181,9 +239,15 @@ function Dashboard() {
         <section className="grid lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2 relative overflow-hidden rounded-2xl border border-border bg-card shadow-card">
             <div className="relative grid sm:grid-cols-[200px_1fr]">
-              <img src={destinations[0].image} alt="" className="h-full w-full object-cover aspect-[4/3] sm:aspect-auto" />
+              <img
+                src={destinations[0].image}
+                alt=""
+                className="h-full w-full object-cover aspect-[4/3] sm:aspect-auto"
+              />
               <div className="p-5 space-y-3">
-                <Badge className="bg-success/15 text-success border-0 w-fit">Upcoming · in 12 days</Badge>
+                <Badge className="bg-success/15 text-success border-0 w-fit">
+                  Upcoming · in 12 days
+                </Badge>
                 <h3 className="font-display text-2xl font-semibold flex items-center gap-2">
                   <Plane className="h-5 w-5 text-primary" /> Trip to Varkala
                 </h3>
@@ -232,10 +296,16 @@ function Dashboard() {
               <h2 className="font-display text-2xl font-semibold">Recommended for you</h2>
               <p className="text-sm text-muted-foreground">Hand-picked by your travel model</p>
             </div>
-            <Link to="/explore"><Button variant="ghost" size="sm">See all <ArrowRight className="ml-1 h-3.5 w-3.5"/></Button></Link>
+            <Link to="/explore">
+              <Button variant="ghost" size="sm">
+                See all <ArrowRight className="ml-1 h-3.5 w-3.5" />
+              </Button>
+            </Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {destinations.slice(0, 3).map((d, i) => <DestinationCard key={d.id} d={d} index={i} />)}
+            {destinations.slice(0, 3).map((d, i) => (
+              <DestinationCard key={d.id} d={d} index={i} />
+            ))}
           </div>
         </section>
       </div>
@@ -243,8 +313,17 @@ function Dashboard() {
   );
 }
 
-function Mini({ label, v, tone = "default" }: { label: string; v: string; tone?: "default" | "primary" | "success" }) {
-  const c = tone === "primary" ? "text-primary" : tone === "success" ? "text-success" : "text-foreground";
+function Mini({
+  label,
+  v,
+  tone = "default",
+}: {
+  label: string;
+  v: string;
+  tone?: "default" | "primary" | "success";
+}) {
+  const c =
+    tone === "primary" ? "text-primary" : tone === "success" ? "text-success" : "text-foreground";
   return (
     <div>
       <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{label}</div>

@@ -8,8 +8,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && (localStorage.getItem("tm-theme") as Theme | null)) || null;
-    const prefersDark = typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+    const stored =
+      (typeof window !== "undefined" && (localStorage.getItem("tm-theme") as Theme | null)) || null;
+    const prefersDark =
+      typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: dark)").matches;
     const initial: Theme = stored ?? (prefersDark ? "dark" : "light");
     setThemeState(initial);
   }, []);

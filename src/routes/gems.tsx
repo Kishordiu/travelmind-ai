@@ -29,7 +29,8 @@ function Gems() {
               The places guidebooks <span className="text-gradient">forgot</span>.
             </h1>
             <p className="text-muted-foreground mt-3 max-w-xl">
-              Surfaced by our crowd-density model and verified by traveler reviews. Soft footprint, real soul.
+              Surfaced by our crowd-density model and verified by traveler reviews. Soft footprint,
+              real soul.
             </p>
           </div>
         </header>
@@ -37,11 +38,20 @@ function Gems() {
         {/* Map preview */}
         <section className="rounded-2xl border border-border bg-card overflow-hidden shadow-card">
           <div className="relative aspect-[21/9] bg-hero-gradient">
-            <div className="absolute inset-0" style={{ background: "radial-gradient(circle at 30% 50%, transparent 0, rgba(0,0,0,0.4) 100%)" }} />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(circle at 30% 50%, transparent 0, rgba(0,0,0,0.4) 100%)",
+              }}
+            />
             {/* Pin overlays */}
             {[
-              { x: "22%", y: "60%" }, { x: "55%", y: "30%" }, { x: "70%", y: "70%" },
-              { x: "40%", y: "45%" }, { x: "85%", y: "40%" },
+              { x: "22%", y: "60%" },
+              { x: "55%", y: "30%" },
+              { x: "70%", y: "70%" },
+              { x: "40%", y: "45%" },
+              { x: "85%", y: "40%" },
             ].map((p, i) => (
               <div
                 key={i}
@@ -55,7 +65,11 @@ function Gems() {
               </div>
             ))}
             {/* Route arc */}
-            <svg viewBox="0 0 100 50" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
+            <svg
+              viewBox="0 0 100 50"
+              preserveAspectRatio="none"
+              className="absolute inset-0 w-full h-full"
+            >
               <path
                 d="M 20 40 Q 50 5 80 30"
                 stroke="white"
@@ -68,7 +82,9 @@ function Gems() {
             <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
               <div>
                 <div className="text-xs opacity-80">Discovery radius</div>
-                <div className="font-display text-2xl font-semibold">South India · 5 gems found</div>
+                <div className="font-display text-2xl font-semibold">
+                  South India · 5 gems found
+                </div>
               </div>
               <Button variant="secondary" size="sm">
                 <Navigation className="mr-1 h-3.5 w-3.5" /> Near me
@@ -81,7 +97,9 @@ function Gems() {
         <section>
           <h2 className="font-display text-2xl font-semibold mb-4">Picks for the curious</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {hiddenGems.map((d, i) => <DestinationCard key={d.id} d={d} index={i} />)}
+            {hiddenGems.map((d, i) => (
+              <DestinationCard key={d.id} d={d} index={i} />
+            ))}
           </div>
         </section>
 
@@ -104,9 +122,15 @@ function Gems() {
               {destinations.slice(0, 4).map((d) => (
                 <div key={d.id} className="rounded-xl overflow-hidden border border-border group">
                   <div className="relative aspect-[5/3] overflow-hidden">
-                    <img src={d.image} alt="" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img
+                      src={d.image}
+                      alt=""
+                      className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium truncate">{d.name}</div>
+                    <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium truncate">
+                      {d.name}
+                    </div>
                   </div>
                 </div>
               ))}

@@ -14,7 +14,10 @@ export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
       { title: "Sign in — TravelMind AI" },
-      { name: "description", content: "Sign in or create an account to plan smarter trips with TravelMind AI." },
+      {
+        name: "description",
+        content: "Sign in or create an account to plan smarter trips with TravelMind AI.",
+      },
     ],
   }),
   component: Auth,
@@ -70,7 +73,9 @@ function Auth() {
               By continuing you agree to our Terms and Privacy Policy.
             </p>
             <div className="text-center mt-4">
-              <Link to="/" className="text-xs text-muted-foreground hover:text-foreground">← Back home</Link>
+              <Link to="/" className="text-xs text-muted-foreground hover:text-foreground">
+                ← Back home
+              </Link>
             </div>
           </div>
         </motion.div>
@@ -109,7 +114,12 @@ function AuthForm({
       className="space-y-4"
     >
       <Button type="button" variant="outline" className="w-full h-11">
-        <svg viewBox="0 0 24 24" className="h-4 w-4 mr-2"><path fill="#EA4335" d="M12 11v3.2h4.5c-.2 1.2-1.5 3.5-4.5 3.5-2.7 0-4.9-2.2-4.9-5s2.2-5 4.9-5c1.5 0 2.6.6 3.2 1.2l2.2-2.1C16.1 5.3 14.2 4.5 12 4.5 7.9 4.5 4.5 7.9 4.5 12s3.4 7.5 7.5 7.5c4.3 0 7.2-3 7.2-7.3 0-.5 0-.8-.1-1.2H12z"/></svg>
+        <svg viewBox="0 0 24 24" className="h-4 w-4 mr-2">
+          <path
+            fill="#EA4335"
+            d="M12 11v3.2h4.5c-.2 1.2-1.5 3.5-4.5 3.5-2.7 0-4.9-2.2-4.9-5s2.2-5 4.9-5c1.5 0 2.6.6 3.2 1.2l2.2-2.1C16.1 5.3 14.2 4.5 12 4.5 7.9 4.5 4.5 7.9 4.5 12s3.4 7.5 7.5 7.5c4.3 0 7.2-3 7.2-7.3 0-.5 0-.8-.1-1.2H12z"
+          />
+        </svg>
         Continue with Google
       </Button>
       <div className="relative text-center text-xs text-muted-foreground my-2">
@@ -151,7 +161,10 @@ function AuthForm({
           </button>
         </div>
       </div>
-      <Button type="submit" className="w-full h-11 bg-hero-gradient text-white border-0 shadow-glow">
+      <Button
+        type="submit"
+        className="w-full h-11 bg-hero-gradient text-white border-0 shadow-glow"
+      >
         {cta} <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </form>

@@ -53,8 +53,18 @@ export function DestinationCard({ d, index = 0 }: { d: Destination; index?: numb
         </div>
         <div className="grid grid-cols-3 gap-2 pt-2 border-t border-border">
           <Stat label="From" value={`₹${(d.cost / 1000).toFixed(1)}k`} />
-          <Stat label="Safety" value={`${d.safety}`} icon={<Shield className="h-3 w-3" />} tone="success" />
-          <Stat label="Crowd" value={`${d.crowd}`} icon={<Users className="h-3 w-3" />} tone={d.crowd > 60 ? "warn" : "default"} />
+          <Stat
+            label="Safety"
+            value={`${d.safety}`}
+            icon={<Shield className="h-3 w-3" />}
+            tone="success"
+          />
+          <Stat
+            label="Crowd"
+            value={`${d.crowd}`}
+            icon={<Users className="h-3 w-3" />}
+            tone={d.crowd > 60 ? "warn" : "default"}
+          />
         </div>
       </div>
     </motion.article>

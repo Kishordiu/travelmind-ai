@@ -29,17 +29,16 @@ const kindTint: Record<string, string> = {
 
 function Planner() {
   const [step, setStep] = useState(2);
-  const totalCost = itineraryDays.reduce(
-    (a, d) => a + d.items.reduce((b, i) => b + i.cost, 0),
-    0,
-  );
+  const totalCost = itineraryDays.reduce((a, d) => a + d.items.reduce((b, i) => b + i.cost, 0), 0);
 
   return (
     <AppShell title="Trip Planner">
       <div className="p-4 sm:p-6 lg:p-8 max-w-[1400px] mx-auto space-y-6">
         <header className="flex items-end justify-between flex-wrap gap-4">
           <div>
-            <h1 className="font-display text-3xl sm:text-4xl font-semibold">Plan your Varkala escape</h1>
+            <h1 className="font-display text-3xl sm:text-4xl font-semibold">
+              Plan your Varkala escape
+            </h1>
             <p className="text-muted-foreground mt-2">3 days · Coastal · Solo</p>
           </div>
           <Button
@@ -62,7 +61,9 @@ function Planner() {
                   active ? "bg-card border-primary/40 shadow-card" : "bg-muted/30 border-border"
                 }`}
               >
-                <div className={`text-[10px] uppercase tracking-wider ${active ? "text-primary" : "text-muted-foreground"}`}>
+                <div
+                  className={`text-[10px] uppercase tracking-wider ${active ? "text-primary" : "text-muted-foreground"}`}
+                >
                   Step {i + 1}
                 </div>
                 <div className="text-sm font-semibold">{s}</div>
@@ -84,7 +85,9 @@ function Planner() {
               >
                 <div className="flex items-center justify-between p-5 border-b border-border bg-gradient-to-r from-muted/30 to-transparent">
                   <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Day {day.day}</div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                      Day {day.day}
+                    </div>
                     <h3 className="font-display text-xl font-semibold">{day.title}</h3>
                   </div>
                   <Badge variant="outline">
@@ -97,10 +100,14 @@ function Planner() {
                     return (
                       <li key={i} className="flex gap-3 items-start">
                         <div className="flex flex-col items-center">
-                          <div className={`h-9 w-9 rounded-xl grid place-items-center ${kindTint[it.kind]}`}>
+                          <div
+                            className={`h-9 w-9 rounded-xl grid place-items-center ${kindTint[it.kind]}`}
+                          >
                             <Icon className="h-4 w-4" />
                           </div>
-                          {i !== day.items.length - 1 && <div className="w-px flex-1 bg-border mt-1" />}
+                          {i !== day.items.length - 1 && (
+                            <div className="w-px flex-1 bg-border mt-1" />
+                          )}
                         </div>
                         <div className="flex-1 min-w-0 pb-2">
                           <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -132,7 +139,9 @@ function Planner() {
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Wallet className="h-4 w-4 text-primary" /> Budget breakdown
               </div>
-              <div className="mt-2 font-display text-3xl font-semibold">₹{totalCost.toLocaleString()}</div>
+              <div className="mt-2 font-display text-3xl font-semibold">
+                ₹{totalCost.toLocaleString()}
+              </div>
               <div className="text-xs text-success">▼ 9% under predicted</div>
               <div className="mt-4 space-y-2">
                 {[
@@ -147,7 +156,10 @@ function Planner() {
                       <span className="font-medium">₹{r.v.toLocaleString()}</span>
                     </div>
                     <div className="h-1.5 rounded-full bg-muted overflow-hidden">
-                      <div className="h-full rounded-full" style={{ width: `${(r.v / totalCost) * 100}%`, background: r.c }} />
+                      <div
+                        className="h-full rounded-full"
+                        style={{ width: `${(r.v / totalCost) * 100}%`, background: r.c }}
+                      />
                     </div>
                   </div>
                 ))}
@@ -163,7 +175,9 @@ function Planner() {
                 <li>· Add Kappil viewpoint between 4–5pm</li>
                 <li>· Book Friday flight — 12% cheaper</li>
               </ul>
-              <Button variant="secondary" size="sm" className="mt-4">Apply all</Button>
+              <Button variant="secondary" size="sm" className="mt-4">
+                Apply all
+              </Button>
             </div>
 
             <div className="rounded-2xl border border-border bg-card p-5 shadow-card">

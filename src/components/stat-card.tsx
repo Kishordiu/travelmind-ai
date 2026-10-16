@@ -31,12 +31,16 @@ export function StatCard({
       <div className="flex items-start justify-between gap-2 relative">
         <div className="text-xs uppercase tracking-wider opacity-80">{label}</div>
         {icon && (
-          <div className={`grid h-8 w-8 place-items-center rounded-lg ${accent ? "bg-white/15" : "bg-muted"}`}>
+          <div
+            className={`grid h-8 w-8 place-items-center rounded-lg ${accent ? "bg-white/15" : "bg-muted"}`}
+          >
             {icon}
           </div>
         )}
       </div>
-      <div className="mt-3 font-display text-3xl font-semibold tracking-tight relative">{value}</div>
+      <div className="mt-3 font-display text-3xl font-semibold tracking-tight relative">
+        {value}
+      </div>
       {hint && <div className="text-xs mt-1 opacity-80 relative">{hint}</div>}
     </motion.div>
   );

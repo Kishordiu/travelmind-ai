@@ -29,7 +29,10 @@ export const Route = createFileRoute("/")({
           "TravelMind AI plans personalized trips, predicts cost and safety, and uncovers hidden gems. The intelligent travel companion for smarter trips.",
       },
       { property: "og:title", content: "TravelMind AI" },
-      { property: "og:description", content: "The intelligent travel companion for smarter trips." },
+      {
+        property: "og:description",
+        content: "The intelligent travel companion for smarter trips.",
+      },
     ],
   }),
   component: Landing,
@@ -56,14 +59,24 @@ function Nav() {
       <div className="max-w-7xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
         <Brand />
         <nav className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-          <a href="#features" className="hover:text-foreground transition">Features</a>
-          <a href="#destinations" className="hover:text-foreground transition">Destinations</a>
-          <Link to="/insights" className="hover:text-foreground transition">Insights</Link>
-          <Link to="/assistant" className="hover:text-foreground transition">AI Assistant</Link>
+          <a href="#features" className="hover:text-foreground transition">
+            Features
+          </a>
+          <a href="#destinations" className="hover:text-foreground transition">
+            Destinations
+          </a>
+          <Link to="/insights" className="hover:text-foreground transition">
+            Insights
+          </Link>
+          <Link to="/assistant" className="hover:text-foreground transition">
+            AI Assistant
+          </Link>
         </nav>
         <div className="flex items-center gap-2">
           <Link to="/auth">
-            <Button variant="ghost" size="sm" className="hidden sm:inline-flex">Sign in</Button>
+            <Button variant="ghost" size="sm" className="hidden sm:inline-flex">
+              Sign in
+            </Button>
           </Link>
           <Link to="/dashboard">
             <Button size="sm" className="bg-hero-gradient text-white border-0 shadow-glow">
@@ -102,12 +115,15 @@ function Hero() {
             travel with <span className="text-gradient">AI</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Personalized destinations, predicted costs, safety intelligence and hidden gems —
-            all woven into one calm, premium travel companion.
+            Personalized destinations, predicted costs, safety intelligence and hidden gems — all
+            woven into one calm, premium travel companion.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link to="/explore">
-              <Button size="lg" className="bg-hero-gradient text-white border-0 shadow-glow h-12 px-6">
+              <Button
+                size="lg"
+                className="bg-hero-gradient text-white border-0 shadow-glow h-12 px-6"
+              >
                 Explore Destinations <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -161,7 +177,9 @@ function Hero() {
               </div>
             </FloatingCard>
             <FloatingCard className="bottom-6 right-6" delay={0.5}>
-              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Predicted cost</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                Predicted cost
+              </div>
               <div className="font-display text-xl font-semibold">₹38,400</div>
               <div className="text-xs text-success">▼ 12% vs avg</div>
             </FloatingCard>
@@ -169,7 +187,9 @@ function Hero() {
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-success" />
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Safety</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+                    Safety
+                  </div>
                   <div className="text-sm font-semibold">High · 92</div>
                 </div>
               </div>
@@ -225,18 +245,46 @@ function Stats() {
 
 function Features() {
   const feats = [
-    { icon: Compass, t: "Smart recommendations", d: "Models trained on traveler patterns surface destinations that actually fit you." },
-    { icon: BarChart3, t: "Cost & booking prediction", d: "Know what a trip will cost and the best window to book before you commit." },
-    { icon: Shield, t: "Safety intelligence", d: "Live safety scoring, crowd levels and emergency contacts wherever you go." },
-    { icon: Gem, t: "Hidden gems", d: "Discover quiet places loved by locals — not the front page of every blog." },
-    { icon: Sparkles, t: "AI itinerary planner", d: "Tell us your budget and vibe. Get a day-by-day plan in seconds." },
-    { icon: CalendarRange, t: "Offline-ready", d: "Save trips, maps and essentials for when the signal disappears." },
+    {
+      icon: Compass,
+      t: "Smart recommendations",
+      d: "Models trained on traveler patterns surface destinations that actually fit you.",
+    },
+    {
+      icon: BarChart3,
+      t: "Cost & booking prediction",
+      d: "Know what a trip will cost and the best window to book before you commit.",
+    },
+    {
+      icon: Shield,
+      t: "Safety intelligence",
+      d: "Live safety scoring, crowd levels and emergency contacts wherever you go.",
+    },
+    {
+      icon: Gem,
+      t: "Hidden gems",
+      d: "Discover quiet places loved by locals — not the front page of every blog.",
+    },
+    {
+      icon: Sparkles,
+      t: "AI itinerary planner",
+      d: "Tell us your budget and vibe. Get a day-by-day plan in seconds.",
+    },
+    {
+      icon: CalendarRange,
+      t: "Offline-ready",
+      d: "Save trips, maps and essentials for when the signal disappears.",
+    },
   ];
   return (
     <section id="features" className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
       <div className="max-w-2xl mb-12">
-        <Badge variant="outline" className="mb-3">Features</Badge>
-        <h2 className="font-display text-3xl sm:text-4xl font-semibold">Everything a modern traveler needs, distilled.</h2>
+        <Badge variant="outline" className="mb-3">
+          Features
+        </Badge>
+        <h2 className="font-display text-3xl sm:text-4xl font-semibold">
+          Everything a modern traveler needs, distilled.
+        </h2>
         <p className="text-muted-foreground mt-3">
           One refined surface for discovery, planning, safety and intelligence — no clutter.
         </p>
@@ -268,12 +316,18 @@ function DestinationsSection() {
     <section id="destinations" className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
       <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
         <div>
-          <Badge variant="outline" className="mb-3">Trending</Badge>
+          <Badge variant="outline" className="mb-3">
+            Trending
+          </Badge>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold">Curated for you</h2>
-          <p className="text-muted-foreground mt-2 max-w-xl">A glimpse of what travelers like you are loving this season.</p>
+          <p className="text-muted-foreground mt-2 max-w-xl">
+            A glimpse of what travelers like you are loving this season.
+          </p>
         </div>
         <Link to="/explore">
-          <Button variant="ghost">View all <ArrowRight className="ml-1 h-4 w-4" /></Button>
+          <Button variant="ghost">
+            View all <ArrowRight className="ml-1 h-4 w-4" />
+          </Button>
         </Link>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -287,14 +341,28 @@ function DestinationsSection() {
 
 function Testimonials() {
   const tests = [
-    { n: "Aanya R.", r: "Product Designer", t: "It nailed the vibe I wanted and saved me three hours of research. The cost prediction was within ₹400." },
-    { n: "Marco D.", r: "Photographer", t: "The hidden gems section is the entire reason I'll keep using this. Found a fishing village I'd never have." },
-    { n: "Priya S.", r: "Solo traveler", t: "Safety intelligence feels like having a local friend. The night-safety score made me trust new places faster." },
+    {
+      n: "Aanya R.",
+      r: "Product Designer",
+      t: "It nailed the vibe I wanted and saved me three hours of research. The cost prediction was within ₹400.",
+    },
+    {
+      n: "Marco D.",
+      r: "Photographer",
+      t: "The hidden gems section is the entire reason I'll keep using this. Found a fishing village I'd never have.",
+    },
+    {
+      n: "Priya S.",
+      r: "Solo traveler",
+      t: "Safety intelligence feels like having a local friend. The night-safety score made me trust new places faster.",
+    },
   ];
   return (
     <section className="bg-muted/30 border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
-        <h2 className="font-display text-3xl sm:text-4xl font-semibold text-center">Loved by curious travelers</h2>
+        <h2 className="font-display text-3xl sm:text-4xl font-semibold text-center">
+          Loved by curious travelers
+        </h2>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
           {tests.map((t, i) => (
             <motion.figure
@@ -306,7 +374,9 @@ function Testimonials() {
               className="rounded-2xl p-6 border border-border bg-card shadow-card"
             >
               <div className="flex gap-0.5 mb-3">
-                {[...Array(5)].map((_, j) => <Star key={j} className="h-3.5 w-3.5 fill-accent text-accent" />)}
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} className="h-3.5 w-3.5 fill-accent text-accent" />
+                ))}
               </div>
               <blockquote className="text-sm leading-relaxed">"{t.t}"</blockquote>
               <figcaption className="mt-4 flex items-center gap-3">
@@ -338,7 +408,8 @@ function CTA() {
             Your next trip starts with one smart conversation.
           </h2>
           <p className="mt-4 opacity-90">
-            Tell TravelMind your budget, the days you have, and the kind of trip you want. We'll handle the rest.
+            Tell TravelMind your budget, the days you have, and the kind of trip you want. We'll
+            handle the rest.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link to="/assistant">
@@ -347,7 +418,11 @@ function CTA() {
               </Button>
             </Link>
             <Link to="/dashboard">
-              <Button size="lg" variant="outline" className="h-12 px-6 bg-transparent text-white border-white/30 hover:bg-white/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 px-6 bg-transparent text-white border-white/30 hover:bg-white/10"
+              >
                 Open dashboard <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -376,7 +451,13 @@ function Footer() {
           <div key={g.t}>
             <div className="text-sm font-semibold mb-3">{g.t}</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              {g.l.map((x) => <li key={x}><a className="hover:text-foreground" href="#">{x}</a></li>)}
+              {g.l.map((x) => (
+                <li key={x}>
+                  <a className="hover:text-foreground" href="#">
+                    {x}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         ))}

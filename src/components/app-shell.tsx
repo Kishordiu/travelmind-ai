@@ -60,7 +60,8 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
         </div>
         <nav className="px-3 py-5 space-y-1">
           {nav.map((item) => {
-            const active = pathname === item.to || (item.to !== "/dashboard" && pathname.startsWith(item.to));
+            const active =
+              pathname === item.to || (item.to !== "/dashboard" && pathname.startsWith(item.to));
             const Icon = item.icon;
             return (
               <Link
@@ -74,7 +75,10 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
                 }`}
               >
                 {active && (
-                  <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-hero-gradient" aria-hidden />
+                  <span
+                    className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-hero-gradient"
+                    aria-hidden
+                  />
                 )}
                 <Icon className={`h-4 w-4 ${active ? "text-primary" : ""}`} />
                 <span>{item.label}</span>
@@ -120,7 +124,9 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
             </button>
             <div className="flex-1 min-w-0 flex items-center gap-3">
               {title && (
-                <h1 className="hidden md:block font-display font-semibold text-lg truncate">{title}</h1>
+                <h1 className="hidden md:block font-display font-semibold text-lg truncate">
+                  {title}
+                </h1>
               )}
               <div className="ml-auto flex items-center gap-2 max-w-md w-full">
                 <div className="relative flex-1 hidden sm:block">

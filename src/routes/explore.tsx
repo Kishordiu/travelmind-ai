@@ -8,7 +8,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 
@@ -16,14 +20,27 @@ export const Route = createFileRoute("/explore")({
   head: () => ({
     meta: [
       { title: "Explore destinations — TravelMind AI" },
-      { name: "description", content: "Search and filter destinations by budget, safety, crowd level and activity." },
+      {
+        name: "description",
+        content: "Search and filter destinations by budget, safety, crowd level and activity.",
+      },
     ],
   }),
   component: Explore,
 });
 
 const chips = [
-  "All", "Beach", "Mountain", "City", "Nature", "Heritage", "Desert", "Family", "Solo", "Romantic", "Adventure",
+  "All",
+  "Beach",
+  "Mountain",
+  "City",
+  "Nature",
+  "Heritage",
+  "Desert",
+  "Family",
+  "Solo",
+  "Romantic",
+  "Adventure",
 ];
 
 const sortOptions = [
@@ -59,11 +76,20 @@ function Explore() {
       );
     }
     switch (sort) {
-      case "cost": list = [...list].sort((a, b) => a.cost - b.cost); break;
-      case "safety": list = [...list].sort((a, b) => b.safety - a.safety); break;
-      case "crowd": list = [...list].sort((a, b) => a.crowd - b.crowd); break;
-      case "trending": list = [...list].sort((a, b) => b.bookingProb - a.bookingProb); break;
-      default: list = [...list].sort((a, b) => b.match - a.match);
+      case "cost":
+        list = [...list].sort((a, b) => a.cost - b.cost);
+        break;
+      case "safety":
+        list = [...list].sort((a, b) => b.safety - a.safety);
+        break;
+      case "crowd":
+        list = [...list].sort((a, b) => a.crowd - b.crowd);
+        break;
+      case "trending":
+        list = [...list].sort((a, b) => b.bookingProb - a.bookingProb);
+        break;
+      default:
+        list = [...list].sort((a, b) => b.match - a.match);
     }
     return list;
   }, [q, chip, sort, budget]);
@@ -72,7 +98,9 @@ function Explore() {
     <AppShell title="Explore">
       <div className="p-4 sm:p-6 lg:p-8 max-w-[1400px] mx-auto space-y-6">
         <header>
-          <h1 className="font-display text-3xl sm:text-4xl font-semibold">Where will the model send you?</h1>
+          <h1 className="font-display text-3xl sm:text-4xl font-semibold">
+            Where will the model send you?
+          </h1>
           <p className="text-muted-foreground mt-2 max-w-2xl">
             Filter by budget, safety, and crowd level. Cards are scored against your preferences.
           </p>
@@ -95,7 +123,9 @@ function Explore() {
               </SelectTrigger>
               <SelectContent>
                 {sortOptions.map((o) => (
-                  <SelectItem key={o.v} value={o.v}>{o.l}</SelectItem>
+                  <SelectItem key={o.v} value={o.v}>
+                    {o.l}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -126,7 +156,13 @@ function Explore() {
                 <span className="text-muted-foreground">Max budget</span>
                 <span className="font-semibold">₹{budget[0].toLocaleString()}</span>
               </div>
-              <Slider value={budget} onValueChange={setBudget} max={100000} step={2000} min={5000} />
+              <Slider
+                value={budget}
+                onValueChange={setBudget}
+                max={100000}
+                step={2000}
+                min={5000}
+              />
             </div>
             <div className="flex items-center gap-2 flex-wrap text-xs">
               <Badge variant="outline">Safe nights</Badge>
@@ -145,11 +181,15 @@ function Explore() {
         {filtered.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-border p-12 text-center">
             <h3 className="font-display text-lg font-semibold">No matches — yet.</h3>
-            <p className="text-sm text-muted-foreground mt-1">Try loosening your budget or clearing filters.</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Try loosening your budget or clearing filters.
+            </p>
           </div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((d, i) => <DestinationCard key={d.id} d={d} index={i} />)}
+            {filtered.map((d, i) => (
+              <DestinationCard key={d.id} d={d} index={i} />
+            ))}
           </div>
         )}
       </div>

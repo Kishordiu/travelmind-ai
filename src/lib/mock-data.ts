@@ -34,7 +34,8 @@ export const destinations: Destination[] = [
     crowd: 32,
     safety: 88,
     bookingProb: 0.82,
-    description: "Dramatic red cliffs meeting the Arabian Sea — quieter than Goa, with cinematic sunsets.",
+    description:
+      "Dramatic red cliffs meeting the Arabian Sea — quieter than Goa, with cinematic sunsets.",
     tags: ["Beach", "Romantic", "Sunset", "Budget"],
     category: "beach",
   },
@@ -49,7 +50,8 @@ export const destinations: Destination[] = [
     crowd: 18,
     safety: 76,
     bookingProb: 0.61,
-    description: "High-altitude cold desert with monasteries, fossil villages, and surreal night skies.",
+    description:
+      "High-altitude cold desert with monasteries, fossil villages, and surreal night skies.",
     tags: ["Mountain", "Adventure", "Solo", "Stargazing"],
     category: "mountain",
   },
@@ -79,7 +81,8 @@ export const destinations: Destination[] = [
     crowd: 72,
     safety: 96,
     bookingProb: 0.69,
-    description: "Skyline, hawker streets and gardens engineered to delight — a polished urban escape.",
+    description:
+      "Skyline, hawker streets and gardens engineered to delight — a polished urban escape.",
     tags: ["City", "Family", "Food", "Luxury"],
     category: "city",
   },
@@ -215,7 +218,11 @@ export const itineraryDays = [
 export const safetyAlerts = [
   { kind: "weather", level: "low", text: "Light coastal showers expected Saturday evening." },
   { kind: "crowd", level: "medium", text: "High footfall at North Cliff between 5–7pm." },
-  { kind: "night", level: "low", text: "Well-lit promenade until 11pm. Standard precautions advised." },
+  {
+    kind: "night",
+    level: "low",
+    text: "Well-lit promenade until 11pm. Standard precautions advised.",
+  },
 ];
 
 export const emergencyContacts = [
