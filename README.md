@@ -1,6 +1,4 @@
-# TRAVELMIND AI
-
-![Cinematic hero](https://capsule-render.vercel.app/api?type=rect&color=0:070707,100:171717&height=230&text=TRAVELMIND%20AI&fontColor=F3F3EE&fontSize=40&fontAlignY=38&desc=AI%20%2F%20TRAVEL%20PLANNING&descColor=999991&descSize=12&descAlignY=66&animation=fadeIn)
+![TRAVELMIND AI — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
 > **AI / TRAVEL PLANNING.**
 
