@@ -2,54 +2,56 @@
 
 # TRAVELMIND AI
 
-> **AI / TRAVEL PLANNING.**
+**A travel-planning interface that organises destination discovery around a traveller's mood, constraints, and itinerary.**
 
-## THE PREMISE
+TravelMind AI includes a destination catalogue, discovery sections, sign-in and dashboard routes, and an AI-assistant interface. The current destination records are defined in `src/lib/mock-data.ts`, including demonstration values for cost, crowding, safety, matching, and booking probability. These values are sample content, not live travel intelligence or verified safety ratings.
 
-TravelMind AI explores a planning experience where destinations, constraints and user intent become one reasoning surface instead of disconnected search results.
+## Planning flow
 
-## THE EXPERIENCE
+```text
+Choose a travel mood / constraint
+             │
+             ▼
+Explore the destination catalogue
+             │
+             ▼
+Compare the displayed attributes
+             │
+             ▼
+Shape a trip plan
+             │
+             ▼
+Review and refine the itinerary
+```
 
-**Plan around intent, not inventory.**  
-**Let recommendations explain themselves.**  
-**Make the journey feel designed before it is booked.**
+## Product surfaces
 
-## THE SYSTEM
+- **Destination discovery:** Browse a curated sample catalogue with imagery and tags.
+- **Preference-oriented recommendations:** Explore how different trip attributes might be compared.
+- **Insights and assistant UI:** A place for future conversational or data-backed planning.
+- **Account and dashboard routes:** An application foundation for a more personalised planning flow.
 
-The frontend is structured for future AI and travel-data adapters while keeping the current interface independent from unsupported live-data claims.
+## Stack
 
-## THE STACK
+React · TypeScript · Vite · TanStack Router / Start · Framer Motion · Tailwind CSS
 
-React · TypeScript · Vite · Tailwind CSS
+## Run locally
 
-## RUN
-
-**Requirements:** Node.js 20+ and Bun.
+**Requirements:** Node.js and Bun (recommended).
 
 ```bash
+git clone https://github.com/Kishordiu/travelmind-ai.git
+cd travelmind-ai
 bun install
 bun run dev
 ```
 
-For a production bundle and local preview:
+Use the local URL printed by Vite.
 
-```bash
-bun run build
-bun run preview
-```
+## Data and booking boundary
 
-Run static checks with:
-
-```bash
-bun run lint
-```
-
-## PROJECT STATE
-
-**AI travel-planning prototype**
-
-Implemented behaviour is documented separately from future integrations so the project story stays honest as the product evolves.
+The visible sample data does not establish that AI recommendations, crowd levels, safety scores, costs, booking probabilities, weather, transport, or accommodation availability are live or independently verified. The repository should not be treated as a booking engine. Check real prices, entry rules, local guidance, and bookings with authoritative providers before travelling.
 
 ---
 
-<p align="center"><strong>K. KISHOR KUMAR</strong><br><sub>ENGINEERING / PRODUCT / SYSTEMS</sub></p>
+<p align="center"><sub>DIU FOUNDRY · TRAVEL / PERSONALISATION / PRODUCT SYSTEMS</sub></p>
