@@ -1,5 +1,7 @@
 ![TRAVELMIND AI — bespoke brushed-metal project artwork](./assets/readme-metal-hero.svg)
 
+# TRAVELMIND AI
+
 > **AI / TRAVEL PLANNING.**
 
 ## THE PREMISE
